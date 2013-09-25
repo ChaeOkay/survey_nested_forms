@@ -12,7 +12,6 @@ RSpec.configure do |config|
 
   config.include Capybara::DSL
   config.mock_with :rspec
-  config.include AuthenticationHelper
   config.include FactoryGirl::Syntax::Methods
 
   config.use_transactional_fixtures = false
