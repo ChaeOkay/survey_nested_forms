@@ -1,0 +1,8 @@
+<%= form_for :survey do |survey_form| %>
+    Survey Title: <%= survey_form.text_field :title %>
+    <%= survey_form.fields_for :question do |question_field| %>
+      Question Description: <%= question_field.text_field :description %>
+    <% end %>
+    <%= survey_form.submit "Create amazing survey" %>
+<% end %>
+
