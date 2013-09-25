@@ -1,8 +1,9 @@
 class CreateAnswers < ActiveRecord::Migration
   def up
     create_table :answers do |t|
-      t.string :content
+      t.string :content, null: false
       t.references :question
+      t.timestamps
     end
   end
 

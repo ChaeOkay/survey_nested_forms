@@ -14,17 +14,23 @@
 ActiveRecord::Schema.define(:version => 20130925180042) do
 
   create_table "answers", :force => true do |t|
-    t.string  "content"
-    t.integer "question_id"
+    t.string   "content",     :null => false
+    t.integer  "question_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "questions", :force => true do |t|
-    t.string  "description"
-    t.integer "survey_id"
+    t.string   "description", :null => false
+    t.integer  "survey_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "surveys", :force => true do |t|
-    t.string "title"
+    t.string   "title",      :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
