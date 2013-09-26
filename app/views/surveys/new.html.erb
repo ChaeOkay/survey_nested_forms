@@ -1,8 +1,13 @@
-<%= form_for :survey do |survey_form| %>
+<p><%= flash[:notice] %></p>
+
+<%= form_for @survey do |survey_form| %>
     Survey Title: <%= survey_form.text_field :title %>
-    <%= survey_form.fields_for :question do |question_field| %>
+  </br>
+
+    <%= survey_form.fields_for :questions do |question_field| %>
       Question Description: <%= question_field.text_field :description %>
     <% end %>
-    <%= survey_form.submit "Create amazing survey" %>
+
+    <%= survey_form.submit "Create Amazing Survey" %>
 <% end %>
 
