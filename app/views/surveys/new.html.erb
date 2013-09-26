@@ -3,10 +3,10 @@
 <%= form_for @survey do |survey_form| %>
     Survey Title: <%= survey_form.text_field :title %>
   </br>
-
-    <%= survey_form.fields_for :questions do |question_field| %>
-      Question Description: <%= question_field.text_field :description %>
-    <% end %>
+<!--   <button>Add Question</button> -->
+  <%= survey_form.fields_for :questions do |question_field| %>
+    <%= render 'question_form', survey_form: question_field %>
+  <% end %>
 
     <%= survey_form.submit "Create Amazing Survey" %>
 <% end %>
